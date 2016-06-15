@@ -37,10 +37,10 @@
 #QUIZ 1 (http://www.elcivics.com/lifeskills/breakfast.pdf)
 
 sample1 = '''Jack is a bachelor. He works in downtown Chicago as a shoe salesman. Every morning on his way
-    to ___1___, Jack stops at a donut shop and buys a chocolate donut and a ___2___ of coffee. Jack likes this morning
-    routine because it is quick and easy. He doesn’t have to cook breakfast or ___3___ the dishes.'''
+    to ___1___, Jack stops at a donut shop and buys a chocolate ___2___ and a ___3___ of coffee. Jack likes this morning
+    routine because it is quick and easy. He doesn't have to cook breakfast or ___4___ the dishes.'''
 
-answer1 = ["work", "cup", "wash"]
+answer1 = ["work","donut", "cup", "wash"]
 
 
 #QUIZ 2
@@ -69,13 +69,19 @@ answer3 = ["love", "interesting", "voice", "warm" ,"daydream"]
 
 
 # To make a list of quiz blanks more easily. Enter number of blanks in the quiz.
-def createQuizNumber(a):
+# Input number of blanks in int, then outputs a list of strings
+
+def create_quiz_number(num_blanks):
     number_list = []
-    for i in range(1,a+1):
+    for i in range(1,num_blanks+1):
         number_list.append("___"+str(i)+"___")
     return number_list
 
+
 # Checks if a word in parts_of_speech is a substring of the word passed in.
+# Input a word in string, a list of strings to compare
+# Outputs 'pos' from 'parts_of_speech' when 'word' matches the 'pos'
+# Outputs None if no match
 
 def word_in_pos(word, parts_of_speech):
     for pos in parts_of_speech:
@@ -83,20 +89,21 @@ def word_in_pos(word, parts_of_speech):
             return pos
     return None
 
+
+
 # The main function of the quiz. Checks each blank, and receives answers.
 # If the answer is correct, prints the whole line with blanks filled with answers
 # ml_string is the quiz, and ans is the list of answers.
-
+# Outputs the corrected ml_string with all blanks filled in.
 
 def fill_blanks(ml_string, ans):
     replaced = []
     count = 0
-    num_quiz = createQuizNumber(len(ans))
+    num_quiz = create_quiz_number(len(ans))
 
     print(ml_string)
-    print(num_quiz)
-    
-    ml_split = ml_string.split() #Assigned new list, so I can use ml_string to print while quiz is in progress
+
+    ml_split = ml_string.split() # Assigned new list, so I can use ml_string to print while quiz is in progress
     
     for word in ml_split:
         
@@ -109,7 +116,7 @@ def fill_blanks(ml_string, ans):
                 user_input = raw_input("What should go in " + replacement + ": ")
             print("Correct!")
 
-            del num_quiz[0] #The corrected num_quiz is deleted
+            del num_quiz[0] # The corrected num_quiz is deleted
             
             ml_string = ml_string.replace(replacement, user_input)
             print ml_string
@@ -118,27 +125,24 @@ def fill_blanks(ml_string, ans):
             
     return ml_string
                 
+
+# Choose level starts the quiz
+# It asks for input level 1,2,3 or easy, medium, hard
+# It will print the quiz throughout the process
+# but outputs nothing
+
 def choose_level():
-    a = raw_input("Choose level (1,2,3) or (easy, medium, hard) :")
-    if a == '1' or a == "easy":
+    level = raw_input("Choose level (1,2,3) or (easy, medium, hard) :")
+    if level == '1' or level == "easy":
         fill_blanks(sample1,answer1)
         return
-    elif a == '2' or a == "medium":
+    elif level == '2' or level == "medium":
         fill_blanks(sample2,answer2)
         return
-    elif a == '3' or a == "hard":
+    elif level == '3' or level == "hard":
         fill_blanks(sample3,answer3)
         return
     choose_level()
-     
         
-
+# Run code
 choose_level()
-
-
-
-
-
-
-
-            
