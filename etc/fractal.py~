@@ -1,0 +1,40 @@
+import turtle
+
+def draw_triangle(tur):
+    for i in range(1,4):
+        tur.forward(tur.size)
+        tur.left(120)
+
+def fractal(tur,step):
+    if step == -1:
+        tur.left(120)
+        return
+    for i in range(1,4):
+        tur.forward(pow(2,step)*tur.size)
+        if i == 1:
+            fractal(tur,step-1)
+            tur.right(120)
+        if i == 2:
+            tur.right(120)
+            fractal(tur,step-1)
+
+
+def draw_fractal(step):
+
+    window = turtle.Screen()
+    window.bgcolor("black")
+    
+    asd = turtle.Turtle()
+    asd.shape("turtle")
+    asd.color("green")
+    asd.speed(3)
+    asd.size = 20
+
+    fractal(asd,step)
+
+        
+
+
+    window.exitonclick()
+
+draw_fractal(1)

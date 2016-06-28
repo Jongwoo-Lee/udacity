@@ -1,0 +1,43 @@
+<!-- This is an HTML comment. Comments allow you to communicate with other programmers using
+text that will be ignored by the computer! -->
+<!DOCTYPE html> <!-- The DOCTYPE tells the browser what kind of document this is (HTML) -->
+<html>
+  <head> <!-- The head tag includes important information about the page -->
+    <meta charset="UTF-8"> <!-- This line defines something called "character encoding"
+    This will allow the browser to display certain characters (such as non-Roman letters) correctly.
+    You should include this line in the head of all of your webpages. -->
+    <title>My First HTML</title> <!-- This is the title of your page (what appears in the name of a browser tab) -->
+    <link rel="stylesheet" href="style.css"> <!-- This line links your CSS stylesheet to your HTML (see Lesson 1.3) -->
+  </head>
+
+<body> <!-- The body tag is where the "flesh" of your HTML goes -->
+  <!-- Write your HTML here -->
+  <h1> Voronoi Diagram </h1>
+  <div class = "app">
+    <img class = "image" src = "https://upload.wikimedia.org/wikipedia/commons/5/54/Euclidean_Voronoi_diagram.svg" alt = "Image of Voronoi diagram from Wikipedia">
+    <div>
+    <div class = "rules"> 7.1 </div>
+      <p>Let P be a set of n point sites in the plane. If all the sites are collinear
+        then <b>Vor(P)</b> consists of n-1 parallel lines. Otherwise, <b>Vor(P)</b> is connected and
+        its edges are either segments or half-lines</p>
+    <div class = "rules"> 7.2 </div>
+      <p>For n>=3, the number of vertices in the Voronoi diagram of a set of n point
+        sites in the plane is at most 2n-5 and the number of edges is at most 3n-6</p>
+    <div class = "rules"> 7.3 </div>
+      <p>
+        <span style = "color:blue">(i)</span>
+        A point q is a vertex of <b>Vor(P)</b> if and only if its largest empty circle <b>Cp(q)</b>
+        contains three or more sites on its boundary
+      </p>
+      <p>
+        <span style = "color:blue">(ii)</span>
+        The bisector between sites pi and pj defines an edge of <b>Vor(P)</b> if and only if
+        there is a point q on the bisector such that <b>Cp(q)</b> contains both pi and pj on
+        its boundary but no other site.
+      </p>
+      <p> The texts are from <em>"Computational Geometry Algorithms and Applications Third Edition"</em>
+        by <b>Mark de Breg, Otfried Cheong, Marc van Kreveld, Mark Overmars</b></p>
+    </div>
+    </div>
+</body>
+</html>

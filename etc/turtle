@@ -1,0 +1,45 @@
+import turtle
+
+def draw_practice():
+    window = turtle.Screen()
+    window.bgcolor("black")
+
+    #make brad turtle
+    brad = turtle.Turtle()
+    brad.shape("turtle")
+    brad.color("green")
+    brad.speed(20)
+
+    #Turn brad turtle 90 degrees four times to draw a square
+    
+
+    #make angie turtle
+    angie = turtle.Turtle()
+    angie.shape("arrow")
+    angie.color("blue")
+    #angie turtle draws a circle
+    angie.circle(100)
+
+    third = turtle.Turtle()
+    third.shape("classic")
+    third.color("white")
+    third.speed(20)
+
+    for i in range(1,37):
+        i = 0
+        while i < 4 :
+            brad.forward(100)
+            brad.right(90)
+            i += 1
+        third.backward(200)
+        third.left(120)
+        third.backward(200)
+        third.left(120)
+        third.backward(200)
+        third.left(120)
+        brad.right(10)
+        third.left(10)
+
+    window.exitonclick()
+
+draw_practice()

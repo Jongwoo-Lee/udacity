@@ -1,0 +1,11 @@
+import time
+import webbrowser
+
+total_breaks = 3
+break_count = 0
+
+print("This program started on " + time.ctime())
+while break_count < total_breaks:
+    time.sleep(3)
+    webbrowser.open("http://sports.news.naver.com/videoCenter/index.nhn?uCategory=wfootball&category=copaamerica&gameId=201606087143914277&listType=game")
+    break_count += 1
